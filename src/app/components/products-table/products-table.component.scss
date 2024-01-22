@@ -1,0 +1,11 @@
+@use "variables";
+.products-table {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - #{variables.$header-height});
+
+  mat-table {
+    flex: 1;
+    overflow-y: auto;
+  }
+}
