@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from 'app/core/interfaces/product.interface';
-import { delay, map, Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ProductsApiService {
@@ -9,12 +9,7 @@ export class ProductsApiService {
 
   public getProducts(limit = 1000): Observable<Product[]> {
     return this.http.get<Product[]>('assets/products.json').pipe(
-      delay(this.randomDelay()),
       map((res) => res.slice(0, limit)),
     );
-  }
-
-  private randomDelay(): number {
-    return Math.random() * 10;
   }
 }

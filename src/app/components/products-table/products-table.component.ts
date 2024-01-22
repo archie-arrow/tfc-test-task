@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnInit, TrackByFunction, ViewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+  TrackByFunction,
+  ViewChild
+} from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { LoadingSpinnerComponent } from '@components/loading-spinner/loading-spinner.component';
@@ -29,14 +36,15 @@ export class ProductsTableComponent implements OnInit {
   public dataSource = new MatTableDataSource<Product>();
   public displayedColumns = ['name', 'brand', 'category', 'price', 'quantity'];
 
-  constructor(private productsApiService: ProductsApiService) {}
+  constructor(private productsApiService: ProductsApiService, private cdr: ChangeDetectorRef) {}
 
   public trackProduct: TrackByFunction<Product> = (index: number, product: Product) => product.id;
 
   public ngOnInit(): void {
-    this.loadProducts().subscribe((products) => {
+    this.loadProducts().subscribe((products: Product[]) => {
       this.dataSource.data = products;
       this.initPaginator();
+      this.cdr.detectChanges();
     });
   }
 
