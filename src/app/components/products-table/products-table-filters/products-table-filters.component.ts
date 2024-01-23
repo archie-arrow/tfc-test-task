@@ -17,7 +17,7 @@ export interface ProductsTableFilterOptions {
   name: string | null;
   category: ProductCategory | null;
   inStock: boolean | null;
-  price: AllowedPriceRangeInterface;
+  price: AllowedPriceRangeInterface | null;
 }
 
 @Component({
