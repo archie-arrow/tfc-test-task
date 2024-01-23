@@ -6,6 +6,7 @@ import {
   TrackByFunction,
   ViewChild
 } from '@angular/core';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { LoadingSpinnerComponent } from '@components/loading-spinner/loading-spinner.component';
@@ -27,7 +28,8 @@ import { finalize, Observable } from 'rxjs';
     MatTableModule,
     MatPaginator,
     LoadingSpinnerComponent,
-    ProductsTableFiltersComponent
+    ProductsTableFiltersComponent,
+    MatExpansionModule
   ],
   templateUrl: './products-table.component.html',
   styleUrl: './products-table.component.scss',

@@ -1,7 +1,12 @@
 <div class="products-table relative">
   <app-loading-spinner [show]="isLoading" diameter="100" />
 
-  <app-products-table-filters [allowedPriceRange]="allowedPriceRange" (filtersChange)="onFiltersChange($event)" />
+  <mat-expansion-panel [expanded]="true" class="filters-panel">
+    <mat-expansion-panel-header>Filters</mat-expansion-panel-header>
+    <div class="filters">
+      <app-products-table-filters [allowedPriceRange]="allowedPriceRange" (filtersChange)="onFiltersChange($event)" />
+    </div>
+  </mat-expansion-panel>
 
   <mat-table recycleRows [dataSource]="dataSource" [trackBy]="trackProduct" class="mat-elevation-z8">
     <ng-container matColumnDef="name">

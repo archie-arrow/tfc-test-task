@@ -10,8 +10,17 @@
   flex: 1 1 0;
   min-width: 200px;
 
+  &-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 0.75rem;
+  }
+
   .slider {
     width: 100%;
-    padding: 0 0.25rem;
+    margin-top: -0.875rem;
   }
 }
