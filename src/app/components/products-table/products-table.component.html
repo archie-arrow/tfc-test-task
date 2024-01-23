@@ -1,6 +1,8 @@
 <div class="products-table relative">
   <app-loading-spinner [show]="isLoading" diameter="100" />
 
+  <app-products-table-filters [allowedPriceRange]="allowedPriceRange" (filtersChange)="onFiltersChange($event)" />
+
   <mat-table recycleRows [dataSource]="dataSource" [trackBy]="trackProduct" class="mat-elevation-z8">
     <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef> Name</mat-header-cell>

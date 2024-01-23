@@ -1,0 +1,17 @@
+.products-table-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.field {
+  display: block;
+  flex: 1 1 0;
+  min-width: 200px;
+
+  .slider {
+    width: 100%;
+    padding: 0 0.25rem;
+  }
+}

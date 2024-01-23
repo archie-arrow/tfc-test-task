@@ -1,0 +1,28 @@
+<form class="products-table-filters" [formGroup]="form">
+  <mat-form-field class="field">
+    <mat-label>Search by name or brand</mat-label>
+    <input formControlName="name" matInput>
+  </mat-form-field>
+  <mat-form-field class="field">
+    <mat-label>Category</mat-label>
+    <mat-select formControlName="category">
+      @for (category of categories;track category) {
+        <mat-option [value]="category">{{ category }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+  <div class="field field-slider" formGroupName="price">
+    <div>Price range: {{ priceForm.controls.from.value }}$ - {{ priceForm.controls.to.value }}$</div>
+    <mat-slider
+      class="slider"
+      [min]="allowedPriceRange.from"
+      [max]="allowedPriceRange.to"
+      [displayWith]="priceRangeDisplayFn"
+    >
+      <input formControlName="from" matSliderStartThumb>
+      <input formControlName="to" matSliderEndThumb>
+    </mat-slider>
+  </div>
+
+  <app-tri-state-checkbox formControlName="inStock" class="field">In stock</app-tri-state-checkbox>
+</form>
