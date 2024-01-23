@@ -2,7 +2,16 @@
 
 ## How to run
 
-Run `npm run start` to start a dev server. Then navigate to `http://localhost:4200/`.
+### Start an application
+
+1. Run `npm install` to install all needed packages.
+2. Run `npm run start` to start a dev server.
+3. Navigate to `http://localhost:4200/`.
+
+### Run unit tests
+
+1. Run `npm install` to install all needed packages.
+2. Run `npm run test`.
 
 ## Notes
 
